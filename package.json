@@ -1,0 +1,16 @@
+{
+  "name": "node-webgl-screenshot-example",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "coffee offscreen_sample.coffee",
+    "compile": "coffee -c -b offscreen_sample.coffee && cat offscreen_sample.js"
+  },
+  "dependencies": {
+    "node-webgl": "^0.5.5",
+    "pngjs": "latest",
+    "three": "0.75"
+  },
+  "devDependencies": {
+    "coffee-script": "latest"
+  }
+}
