@@ -101,9 +101,6 @@ rtTexture = new THREE.WebGLRenderTarget(
 # render
 renderer.render(scene, camera, rtTexture, true)
 
-# read render texture into buffer
-gl = renderer.getContext()
-
 # create a pixel buffer of the correct size
 pixels = new Uint8Array(4 * width * height)
 
