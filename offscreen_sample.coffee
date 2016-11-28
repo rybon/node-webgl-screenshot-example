@@ -110,12 +110,18 @@ gl.readPixels(0, 0, width, height, gl.RGBA, gl.UNSIGNED_BYTE, pixels)
 # lines are vertically flipped in the FBO / need to unflip them
 for j in [0...height]
     for i in [0...width]
-        idx = (width * j + i) << 2
+        k = j * width + i
+        r = pixels[4*k]
+        g = pixels[4*k + 1]
+        b = pixels[4*k + 2]
+        a = pixels[4*k + 3]
 
-        png.data[idx]     = pixels[idx]
-        png.data[idx + 1] = pixels[idx + 1]
-        png.data[idx + 2] = pixels[idx + 2]
-        png.data[idx + 3] = pixels[idx + 3]
+        m = (height - j + 1) * width + i
+        m = m - (width * 2)
+        png.data[4*m]     = r
+        png.data[4*m + 1] = g
+        png.data[4*m + 2] = b
+        png.data[4*m + 3] = a
 
 # Now write the png to disk
 stream = fs.createWriteStream(path)
