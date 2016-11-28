@@ -33,7 +33,7 @@ gl.viewportHeight = canvas.height
 
 # THREE.js business starts here
 scene = new THREE.Scene()
-scene.background = new THREE.Color(0x000000)
+scene.background = new THREE.Color(0xFF6E00)
 
 # camera attributes
 VIEW_ANGLE = 45
