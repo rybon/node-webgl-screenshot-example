@@ -8,7 +8,7 @@
   "dependencies": {
     "node-webgl": "^0.5.5",
     "pngjs": "latest",
-    "three": "0.75"
+    "three": "^0.82.1"
   },
   "devDependencies": {
     "coffee-script": "latest"
