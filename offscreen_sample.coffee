@@ -111,22 +111,22 @@ gl.readPixels(0, 0, width, height, gl.RGBA, gl.UNSIGNED_BYTE, pixels)
 for j in [0...height]
     for i in [0...width]
         k = j * width + i
-        r = pixels[4*k]
-        g = pixels[4*k + 1]
-        b = pixels[4*k + 2]
-        a = pixels[4*k + 3]
+        r = pixels[4 * k]
+        g = pixels[4 * k + 1]
+        b = pixels[4 * k + 2]
+        a = pixels[4 * k + 3]
 
         m = (height - j + 1) * width + i
         m = m - (width * 2)
-        png.data[4*m]     = r
-        png.data[4*m + 1] = g
-        png.data[4*m + 2] = b
-        png.data[4*m + 3] = a
+        png.data[4 * m]     = r
+        png.data[4 * m + 1] = g
+        png.data[4 * m + 2] = b
+        png.data[4 * m + 3] = a
 
 # Now write the png to disk
 stream = fs.createWriteStream(path)
 png.pack().pipe stream
 
 stream.on 'close', () ->
-    # We're done !!
-    console.log("Image written: #{ path }")
+    # We're done!
+    console.log("Image written: #{path}")
